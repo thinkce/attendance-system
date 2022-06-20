@@ -1,3 +1,4 @@
+import 'package:attendance_system/screens/lecturers/dashboard.dart';
 import 'package:attendance_system/screens/main/lecturers_dashbord.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const LecturerHomeScreen(),
+      home: const LecturerHomeScreen(widget: Dashboard(),),
       debugShowCheckedModeBanner: false,
     );
   }
