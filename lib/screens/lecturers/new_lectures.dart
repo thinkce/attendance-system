@@ -1,3 +1,4 @@
+import 'package:attendance_system/widgets/text_fields.dart';
 import 'package:flutter/material.dart';
 
 class NewLectures extends StatefulWidget {
@@ -12,12 +13,13 @@ class _NewLecturesState extends State<NewLectures> {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _scrollController = ScrollController();
   }
+
   @override
-  void dispose(){
+  void dispose() {
     _scrollController!.dispose();
     super.dispose();
   }
@@ -25,15 +27,21 @@ class _NewLecturesState extends State<NewLectures> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
-        key: _globalKey,
-        child: Scrollbar(
-          controller: _scrollController,
-          child: ListView(
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Form(
+          key: _globalKey,
+          child: Scrollbar(
             controller: _scrollController,
-            children: [
+            child: ListView(
+              controller: _scrollController,
+              children:  [
+                const Center(
+                  child: Text("START NEW LECTURES HERE"),
+                ),
 
-            ],
+              ],
+            ),
           ),
         ),
       ),

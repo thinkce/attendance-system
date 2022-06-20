@@ -1,3 +1,4 @@
+import 'package:attendance_system/screens/lecturers/new_lectures.dart';
 import 'package:flutter/material.dart';
 
 class Lectures extends StatefulWidget {
@@ -30,7 +31,7 @@ class _LecturesState extends State<Lectures> {
         ),
         body: const TabBarView(
           children: [
-            Center(child: Text("data"),),
+            NewLectures(),
             Center(child: Text("data"),),
             Center(child: Text("data"),),
           ],
