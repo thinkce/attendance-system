@@ -45,9 +45,9 @@ Widget customText({
 
 Widget cardWidget(
     {String? title,
-      String? number,
-      IconData? icon,
-      required BuildContext context}) {
+    String? number,
+    IconData? icon,
+    required BuildContext context}) {
   double _w = MediaQuery.of(context).size.width;
   double _h = MediaQuery.of(context).size.height;
   return InkWell(
@@ -101,12 +101,12 @@ Widget cardWidget(
 
 Widget customTextField(
     {String? label,
-      bool txtObscure = false,
-      String? Function(String?)? validator,
-      TextEditingController? txtController,
-      bool disable = true,
-      Icon? icon,
-      TextInputType? keyboard = TextInputType.name}) {
+    bool txtObscure = false,
+    String? Function(String?)? validator,
+    TextEditingController? txtController,
+    bool disable = true,
+    Icon? icon,
+    TextInputType? keyboard = TextInputType.name}) {
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: TextFormField(
@@ -137,6 +137,10 @@ Widget customTextField(
       keyboardType: keyboard,
     ),
   );
+}
+
+Widget customDropdown() {
+  return Container();
 }
 
 Widget custombutton(

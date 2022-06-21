@@ -29,18 +29,22 @@ class _NewLecturesState extends State<NewLectures> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: Form(
-          key: _globalKey,
-          child: Scrollbar(
-            controller: _scrollController,
-            child: ListView(
-              controller: _scrollController,
-              children:  [
-                const Center(
-                  child: Text("START NEW LECTURES HERE"),
+        child: Center(
+          child: Form(
+            key: _globalKey,
+            child: Center(
+              child: Container(
+                width: 500,
+                child: Column(
+                  children: [
+                    const Center(
+                      child: Text("START NEW LECTURES HERE"),
+                    ),
+                    customTextField(label: "Course"),
+                    customTextField(label: "Course"),
+                  ],
                 ),
-
-              ],
+              ),
             ),
           ),
         ),
