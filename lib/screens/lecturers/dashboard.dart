@@ -13,13 +13,14 @@ class _DashboardState extends State<Dashboard> {
   ScrollController? _scrollController2;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _scrollController = ScrollController();
     _scrollController2 = ScrollController();
   }
+
   @override
-  void dispose(){
+  void dispose() {
     _scrollController?.dispose();
     _scrollController2?.dispose();
     super.dispose();
@@ -27,7 +28,9 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    double width = Responsive().isDesktop(context) ? MediaQuery.of(context).size.width - 200 : MediaQuery.of(context).size.width;
+    double width = const Responsive().isDesktop(context)
+        ? MediaQuery.of(context).size.width - 200
+        : MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
@@ -39,7 +42,9 @@ class _DashboardState extends State<Dashboard> {
             controller: _scrollController,
             physics: const ClampingScrollPhysics(),
             children: [
-              const SizedBox(height: 30,),
+              const SizedBox(
+                height: 30,
+              ),
               Scrollbar(
                 thumbVisibility: true,
                 controller: _scrollController2,
@@ -50,31 +55,41 @@ class _DashboardState extends State<Dashboard> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(width: 30,),
+                        const SizedBox(
+                          width: 30,
+                        ),
                         Container(
                           width: 250,
                           height: 150,
                           color: Colors.blue,
                         ),
-                        SizedBox(width: 30,),
+                        const SizedBox(
+                          width: 30,
+                        ),
                         Container(
                           width: 250,
                           height: 150,
                           color: Colors.blue,
                         ),
-                        SizedBox(width: 30,),
+                        const SizedBox(
+                          width: 30,
+                        ),
                         Container(
                           width: 250,
                           height: 150,
                           color: Colors.blue,
                         ),
-                        SizedBox(width: 30,),
+                        const SizedBox(
+                          width: 30,
+                        ),
                         Container(
                           width: 250,
                           height: 150,
                           color: Colors.blue,
                         ),
-                        SizedBox(width: 30,),
+                        const SizedBox(
+                          width: 30,
+                        ),
                       ],
                     ),
                   ),

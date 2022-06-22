@@ -42,9 +42,7 @@ class _LecturersSideMenuState extends State<LecturersSideMenu> {
               style:
                   TextStyle(color: Colors.black45, fontWeight: FontWeight.bold),
             ),
-            onTap: () {
-
-            },
+            onTap: () {},
           ),
           Container(
             height: 40,
@@ -143,5 +141,19 @@ class _LecturersSideMenuState extends State<LecturersSideMenu> {
         ],
       ),
     );
+  }
+}
+
+class AdminSideMenu extends StatefulWidget {
+  const AdminSideMenu({Key? key}) : super(key: key);
+
+  @override
+  State<AdminSideMenu> createState() => _AdminSideMenuState();
+}
+
+class _AdminSideMenuState extends State<AdminSideMenu> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

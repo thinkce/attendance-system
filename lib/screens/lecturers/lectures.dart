@@ -15,6 +15,7 @@ class _LecturesState extends State<Lectures> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           bottom: const TabBar(
             tabs: [
               Tab(
@@ -32,8 +33,12 @@ class _LecturesState extends State<Lectures> {
         body: const TabBarView(
           children: [
             NewLectures(),
-            Center(child: Text("data"),),
-            Center(child: Text("data"),),
+            Center(
+              child: Text("data"),
+            ),
+            Center(
+              child: Text("data"),
+            ),
           ],
         ),
       ),
