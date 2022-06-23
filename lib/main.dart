@@ -1,6 +1,4 @@
 import 'package:attendance_system/screens/authentications/login.dart';
-import 'package:attendance_system/screens/lecturers/dashboard.dart';
-import 'package:attendance_system/screens/main/lecturers_dashbord.dart';
 import 'package:flutter/material.dart';
 
 void main() {

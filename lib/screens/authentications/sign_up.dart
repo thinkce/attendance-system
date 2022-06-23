@@ -1,18 +1,18 @@
 import 'package:attendance_system/controllers/responsive.dart';
-import 'package:attendance_system/screens/authentications/sign_up.dart';
+import 'package:attendance_system/screens/authentications/login.dart';
 import 'package:attendance_system/widgets/text_fields.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Container(
                         child: const Padding(
                           padding: EdgeInsets.all(20.0),
-                          child: LoginForm(),
+                          child: SignUpForm(),
                         ),
                       ),
                     ),
@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Container(
                       child: const Padding(
                         padding: EdgeInsets.all(20.0),
-                        child: LoginForm(),
+                        child: SignUpForm(),
                       ),
                     ),
                   ],
@@ -105,28 +105,35 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({Key? key}) : super(key: key);
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({Key? key}) : super(key: key);
 
+  @override
+  State<SignUpForm> createState() => _SignUpFormState();
+}
+
+class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Container(
       width: const Responsive().isDesktop(context) ? width * 0.40 : width,
-      height: const Responsive().isDesktop(context) ? 500 : 450,
+      height: const Responsive().isDesktop(context) ? 700 : 650,
       decoration: BoxDecoration(
         color: Colors.green.shade900,
         borderRadius: BorderRadius.circular(30),
       ),
       child: Form(
-          child: Column(
+          child: ListView(
         children: [
-          Text(
-            "LOGIN TO ACCOUNT",
-            style: GoogleFonts.aladin(
-              fontSize: 30,
-              fontWeight: FontWeight.w900,
-              color: Colors.white60,
+          Center(
+            child: Text(
+              "SIGN UP FOR ACCOUNT",
+              style: GoogleFonts.aladin(
+                fontSize: 30,
+                fontWeight: FontWeight.w900,
+                color: Colors.white60,
+              ),
             ),
           ),
           const SizedBox(
@@ -135,10 +142,24 @@ class LoginForm extends StatelessWidget {
           const Icon(
             Icons.lock,
             size: 60,
-            color: Colors.white54,
+            color: Colors.black38,
           ),
           const SizedBox(
-            height: 30,
+            height: 10,
+          ),
+          customTextField(
+            label: "First Name",
+            icon: const Icon(
+              Icons.email,
+              color: Colors.white54,
+            ),
+          ),
+          customTextField(
+            label: "Last Name",
+            icon: const Icon(
+              Icons.email,
+              color: Colors.white54,
+            ),
           ),
           customTextField(
             label: "Email",
@@ -155,21 +176,29 @@ class LoginForm extends StatelessWidget {
               color: Colors.white54,
             ),
           ),
-          custombutton(context: context, text: "LOGIN"),
+          customTextField(
+            label: "Confirm Password",
+            txtObscure: true,
+            icon: const Icon(
+              Icons.lock,
+              color: Colors.white54,
+            ),
+          ),
+          custombutton(context: context, text: "Sign Up"),
           Center(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Not having an account yet? "),
+                const Text("Already having an account? "),
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: ((context) => const RegisterScreen()),
+                        builder: ((context) => const LoginScreen()),
                       ),
                     );
                   },
-                  child: const Text("Sign Up"),
+                  child: const Text("Sign In"),
                 ),
               ],
             ),

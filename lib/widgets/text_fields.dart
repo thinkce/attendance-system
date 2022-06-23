@@ -118,7 +118,7 @@ Widget customTextField(
         prefixIcon: icon,
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(20),
           ),
           borderSide: BorderSide(
             width: 2,
@@ -127,7 +127,7 @@ Widget customTextField(
         ),
         labelText: label,
         labelStyle: const TextStyle(
-          color: Colors.black54,
+          color: Colors.white54,
         ),
       ),
       obscureText: txtObscure,
@@ -153,7 +153,7 @@ Widget custombutton(
         width: MediaQuery.of(context).size.width,
         child: Card(
           elevation: 0,
-          color: Colors.lightBlue,
+          color: Colors.green,
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Center(
@@ -161,7 +161,7 @@ Widget custombutton(
                 text!,
                 style: const TextStyle(
                   fontSize: 20,
-                  color: Colors.white,
+                  color: Colors.white54,
                   fontWeight: FontWeight.bold,
                 ),
               ),
